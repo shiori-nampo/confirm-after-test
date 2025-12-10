@@ -1,0 +1,35 @@
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/.idea
+/.vscode
+
+# Laravel 標準
+/*.log
+/storage/framework/cache/data/
+/storage/logs/
+
+# Docker 関連（コンテナ・MySQL データなど）
+docker/mysql/data/
+docker/nginx/logs/
+docker/php/logs/
+
+# macOS 系
+.DS_Store
+
+# Composer 個人開発ではOK（チームだと同じ依存関係を固定したい場合コミットする）
+/composer.lock
+
+# npm/yarn lock
+# package-lock.json
+# yarn.lock

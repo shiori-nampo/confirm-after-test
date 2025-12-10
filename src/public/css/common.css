@@ -1,0 +1,40 @@
+html,
+body {
+    height: 100%;
+}
+
+
+body, textarea, input {
+    color: #8B7969;
+}
+
+textarea::placeholder,
+input::placeholder {
+    color: #BEB1A6;
+}
+
+.app {
+    display: flex;/* 子要素をflexitemにし,並び方やサイズを制御できる*/
+    flex-direction: column;/* 縦方向（上から下）に並べる*/
+    height: 100%;
+}
+
+/* ヘッダー */
+.header {
+    display: grid;/* 行と列で整列できる。flex=1方向のレイアウトに強い。Grid=は縦横両方の位置調整に強い */
+    align-items: center;/* 縦方向の位置を中央揃えにする(文字やボタンなどが縦方向の真ん中に配置される */
+    padding: 16px 0;
+    height: 80px;
+    border: 1px solid #E0DFDE;
+    text-align: center;
+    font-family: serif;
+
+    grid-template-columns: repeat(3, 1fr);/* 列の数と幅を指定。三列作ってそれぞれ均等（1fr＝1単位の比率）headerの中身を３つに分けて横並びにする */
+    grid-template-rows: 1fr;/* グリッドの行の高さを指定。headerの高さは固定なので縦方向は1行だけで十分 */
+}
+
+.header__heading {
+    font-weight: lighter;
+    font-size: 32px;
+    grid-column: 2;/* 列の位置をコントロール。2列目から配置され、幅はデフォで1列分（grid-column: 2/4;)幅を広げたいときはこう書く。*/
+}
