@@ -1,0 +1,36 @@
+.header {
+    display: none;
+}
+
+.thanks-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+.thanks-page__message {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.thanks-page__btn {
+    margin: 32px auto 0;
+}
+
+.thanks-page-bg__inner {
+    position: absolute;/*絶対位置にする*/
+    top: 50%;/*親要素の上から50％*/
+    left: 50%;/*親要素の左から50％の位置左上の角を置く*/
+    z-index: -1;/*重なり順序を指定。数値が大きいほど前面に。*/
+    width: 100%;
+    text-align: center;
+    font-family: serif;
+    opacity: 0.3;
+    transform: translate(-50%,-50%);/*このままだと左上が50％の位置に来るためここで調整*/
+}
+
+.thanks-page-bg__text {
+    font-size: 18vw;
+}

@@ -6,9 +6,9 @@
 
 @section('content')
 <div class="contact-form">
-  <h2 class="contact__heading">Contact</h2>
+  <h2 class="contact__heading content__heading">Contact</h2>
   <div class="contact-form__inner">
-    <form class="/confirm" method=post>
+    <form action="/confirm" method="post">
       @csrf
       <div class="contact-form__group contact-form__name-group">
         <label class="contact-form__label">お名前<span class="contact-form__required">※</span>
@@ -113,7 +113,7 @@
               <!--       ↓選べなくする  -->
               <option disabled selected>選択してください</option>
               @foreach($categories as $category)
-              <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : ''}}>
+              <option value="{{ $category->id }}" {{ old('category_id') ==$category->id ? 'selected' : ''}}>
               <!-- ↑selectのname -->
               {{ $category->content }}</option>
               @endforeach
