@@ -38,3 +38,30 @@ input::placeholder {
     font-size: 32px;
     grid-column: 2;/* 列の位置をコントロール。2列目から配置され、幅はデフォで1列分（grid-column: 2/4;)幅を広げたいときはこう書く。*/
 }
+
+/* コンテンツ */
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;/* 親の空きスペースををできるだけ使う。残りの盾スペースを全部しめる（ヘッダーやフッターの間で中央に配置できる */
+    justify-content: center;/* 縦方向の揃え方。上下方向。子要素が親の中央に縦方向で配置 */
+    padding: 48px;
+}
+
+.contact__heading {
+    text-align: center;
+    font-weight: 100;
+    font-size: 32px;
+    font-family: serif;
+}
+
+/* ボタン */
+.btn {
+    display: block;
+    padding: 8px 32px;
+    border: none;
+    background-color: #82756A;
+    color: #FFF;
+    font-size: 16px;
+    cursor: pointer;
+}

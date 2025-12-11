@@ -1,0 +1,132 @@
+.contact-form__inner {
+    margin: 32px auto 0;
+    width: 74%;
+    font-size: 16px;
+}
+
+/* フォーム */
+.contact-form__group {
+    display: grid;
+    /*中身をグリッド（2列レイアウト）で配置*/
+    align-items: center;
+    margin-top: 32px;
+
+    grid-template-columns: 1fr 2fr;
+    /*1列目:2列目＝幅比率1：2 ラベルと入力欄をキリエな2カラムで見せる設定*/
+}
+
+.contact-form__group:first-of-type{
+    margin-top: 0;
+}
+
+.contact-form__group:last-of-type {
+    align-items: flex-start;
+}
+
+.contact-form__required {
+    color: #FF9494;
+}
+
+.contact-form__input {
+    padding: 8px 16px;
+    background: #F4F4F4;
+    color: #BEB1A6;
+}
+
+.contact-form__name-inputs,
+.contact-form__tel-inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 0; /* 長い文字列で子要素が親からはみ出す */
+
+    gap: 16px;
+}
+
+.contact-form__name-input {
+    width: calc(100%/2); /* .contact-form__groupこれが親これの半分の幅 */
+    min-width: 0;
+    flex: 1;
+    box-sizing: border-box;/* これがないとpadding,borderが足されて横並びが崩れる */
+}
+
+.contact-form__gender-inputs {
+display: flex;
+justify-content: left;
+}
+
+.contact-form__gender-option {
+margin-right: 64px;
+}
+
+.contact-form__gender-input {
+position: absolute;
+/*値を見えない位置に移動してラベルを見せる*/
+-webkit-appearance: none;/*入力パーツの見た目を消す(ブラウザ系）*/
+-moz-appearance: none;/*Firefox用*/
+appearance: none;
+}
+
+.contact-form__gender-text {
+display: flex;
+align-items: center;
+}
+
+.contact-form__gender-text::before {
+display: block;/*幅や高さが効くようにする*/
+margin-right: 8px;
+width: 24px;
+height: 24px;
+border: 1px solid #8B7969;/*外枠の丸*/
+border-radius: 50%;/*四角を丸にする*/
+content: '';/*::before,::afterで必ず出てくる。（::before=
+元も要素の前に擬似要素を作る。content=その擬似要素の中身空っぽでも擬似要素作れるし記号を出せる（今回みたいに見た目だけの丸を作るときに使う）*/
+}
+
+.contact-form__gender-input:checked + .contact-form__gender-text::before {
+background: #8B7969;
+border-color: #8B7969;
+}
+
+.contact-form__tel-input {
+width: calc(100%/3);/*calcは計算して幅を決める関数（100%/3)＝親要素の幅を3等分にする。電話番号入力欄を三つ並べる想定*/
+text-align: center;
+}
+
+.contact-form__select-inner {
+position: relative;
+}
+
+.contact-form__select-inner::after {
+    /*擬似要素で下向き三角形を作る*/
+position: absolute;/*親要素の中で自由に配置*/
+top: 50%;/*縦中央*/
+left: 42%;/*横位置（微調整で真ん中っぽく）*/
+width: 0;/*三角形を作るときの定番*/
+height: 0;/*三角毛を作るときの定番(幅、高さは0にして、ボーダーで形を作る*/
+border-top: 12px solid #BEB1A6;
+border-right: 12px solid transparent;
+border-left: 12px solid transparent;/*上三つで三角になる（右と左は透明にする*/
+content: "";/* ::afterは要素が存在しないと表示されない（からでもいいので必須）*/
+transform: translateY(-50%);/*（top:50%)は要素の上端が中央に来る位置。(-50%)で中心にピッタリ揃える*/
+}
+
+.contact-form__select {
+padding: 8px 16px;
+width: 50%;
+background-color: #F4F4F4;
+color: #BEB1A6;
+}
+
+.contact-form__textarea {
+padding: 8px 16px;
+height: 144px;
+background-color: #F4F4F4;
+color: #BEB1A6;
+}
+
+.contact-form__btn {
+margin: 32px auto 0;
+}
+
