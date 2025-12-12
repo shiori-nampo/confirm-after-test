@@ -6,9 +6,10 @@
 @endsection
 
 @section('link')
-<form>
-</form>
+<form action="/logout" method="post">
+  @csrf
 <button class="header__link" type="submit">logout</button>
+</form>
 @endsection
 
 @section('content')

@@ -130,3 +130,23 @@ color: #BEB1A6;
 margin: 32px auto 0;
 }
 
+/* エラーメッセージ */
+.contact-form__error-message {
+margin-top: 8px;
+color: #FF9494;
+
+grid-column: 2;
+}
+
+.contact-form__name-group .contact-form__error-message{
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+gap: 32px;
+}
+
+.contact-form__error-message-first-name,
+.contact-form__error-message-last-name {
+width: 100%;
+}

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Contact;
+use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
@@ -14,7 +15,7 @@ class ContactController extends Controller
         return view('contact',compact('categories'));
     }
 
-    public function confirm(Request $request)
+    public function confirm(ContactRequest $request)
     {
         $contacts = $request->all();
         $category = Category::find($request->category_id);
@@ -22,7 +23,7 @@ class ContactController extends Controller
         return view('confirm' ,compact('contacts','category'));
     }
 
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
         if($request->has('back')) {
             return redirect('/')->withInput();
