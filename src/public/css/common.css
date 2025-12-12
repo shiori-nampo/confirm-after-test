@@ -39,6 +39,18 @@ input::placeholder {
     grid-column: 2;/* 列の位置をコントロール。2列目から配置され、幅はデフォで1列分（grid-column: 2/4;)幅を広げたいときはこう書く。*/
 }
 
+.header__link {
+    margin: 0 auto;
+    width: 80px;
+    border: 1px solid #D9C6B5;
+    background-color: #F0F0F0;
+    color: #D9C6B5;
+    text-decoration: none;
+
+    grid-column: 3;
+    grid-row: 1;
+}
+
 /* コンテンツ */
 .content {
     display: flex;
@@ -64,4 +76,35 @@ input::placeholder {
     color: #FFF;
     font-size: 16px;
     cursor: pointer;
+}
+
+/* ページネーション */
+.pagination {
+    display: flex;/* 子要素(li)を横並び */
+    justify-content: center;
+    list-style: none;/* デフォの・などを消す */
+}
+
+.pagination li:not(.active) {/* （通常状態）アクティブでないliにだけスタイル。*/
+    border: 1px solid #E0DFDE;
+    padding: 4px 12px;
+}
+
+.pagination li:not(:last-child) {/* liのうち最後以外に適用(右側の境界線を消して隣り合ったボタンの二重線を防ぐ */
+    border-right: none;
+}
+
+.pagination a {
+    color: #8B7969;
+}
+
+.pagination__link {
+    text-decoration: none;
+}
+
+.active {/* 現在アクティブ（クリックした所、動きありの所）なページ番号のスタイル */
+    padding: 4px 12px;
+    border: 1px solid #8B7969;
+    background-color: #8B7969;
+    color: #FFF;
 }

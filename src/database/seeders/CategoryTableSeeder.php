@@ -28,5 +28,6 @@ class CategoryTableSeeder extends Seeder
                 'content' => $content,
             ]);
         }
+
     }
 }
